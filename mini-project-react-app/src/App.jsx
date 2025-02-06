@@ -1,9 +1,9 @@
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
-import './Home.css'
+import './App.css'
 
-function Home() {
+function App() {
 
   return (
     <main className='home-page'>
@@ -14,4 +14,4 @@ function Home() {
   )
 }
 
-export default Home
+export default App;
