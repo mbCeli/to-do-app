@@ -9,7 +9,7 @@ function App() {
     <main className='home-page'>
       <Navbar />
       <Footer />
-      <Sidebar />
+      <Sidebar /> {/* ✔ ❌ */}
     </main>
   )
 }
