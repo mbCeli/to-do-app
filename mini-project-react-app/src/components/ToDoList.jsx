@@ -15,15 +15,16 @@ export default function ToDoList() {
 
   return (
     <div className="to-do-list">
-      {toDos.map((toDo) => {
+      {toDos.map((toDo, i) => {
         return (
-          <Link to={`/tasks/${toDos.indexOf(toDo)}`} key={toDo.task}>
             <ToDoListCard
+              key={toDo.task}
+              index={i}
+              /* index={toDos.indexOf(toDo)} */ /* Borré el Link porque al darle al botón de borrar llevaba a la página details,
+              además cambié este index por el índice que ya tiene en cuenta el map */
               toDo={toDo}
               deleteTask={deleteTask}
-              index={toDos.indexOf(toDo)}
             />
-          </Link>
         );
       })}
     </div>
