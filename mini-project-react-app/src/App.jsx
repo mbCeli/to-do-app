@@ -18,12 +18,14 @@ function App() {
       <Navbar />
       <Sidebar /> {/* ✔ ❌ */}
       <Footer />
+      <div className="pages-container">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/tasks/:taskIndex" element={<ToDoDetails />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </div>
     </main>
   );
 }

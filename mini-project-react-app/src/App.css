@@ -1,6 +1,6 @@
-.app-container {
+/* .app-container {
   position: relative;
-}
+} */
 
 nav {
   position: fixed;
@@ -11,7 +11,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 1em;
-  z-index: 5;
+  z-index: 2;
   background-color: #00afef;
   padding: 1em 0;
 }
@@ -24,11 +24,11 @@ nav {
 aside {
   background-color: blanchedalmond;
   position: absolute;
-  top: 5em;
-  z-index: 4;
-  width: 12%;
+  top: 4em;
+  z-index: 1;
+  width: 10em;
   height: auto;
-  /* padding-top: 7em; */
+  padding-top: 2em;
 }
 
 aside ul {
@@ -39,6 +39,11 @@ aside ul {
   gap: 1.5em;
 }
 
+a { 
+  text-decoration: none;
+  color: black;
+}
+
 aside a {
   /* text-decoration: none;
   display: inline-block;
@@ -47,23 +52,26 @@ aside a {
   color: black;
 }
 
-.home-page {
-  width: 87%;
+.pages-container {
   height: 85vh;
   border: 2px solid red;
+  margin: 5em 0 0 10em;
+}
+
+.home-page {
+  /* width: 87%; */
+  /* height: 85vh;
+  border: 2px solid red;
+  margin: 5em 0 0 10em; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  /* position: absolute;
   top: 5em;
   left: 12%;
-  z-index: 6;
+  z-index: 6; */
 }
 
-a { 
-  text-decoration: none;
-  color: black;
-}
  
 .to-do-list {
   display: flex;
@@ -85,16 +93,15 @@ a {
 }
 
 .to-do-details {
-    width: 87%;
+  /* width: 87%;
   height: 85vh;
-  border: 2px solid red;
+  border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  /* position: absolute;
   top: 5em;
-  left: 12%;
-  z-index: 6;
+  left: 12%; */
 }
 
 .footer {
