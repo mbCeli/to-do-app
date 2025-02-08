@@ -1,3 +1,32 @@
+/* Colors */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  --primary-color: #1e40af;
+  --secondary-color: #3b82f6;
+  --background-color: #f3f4f6;
+  --text-color: #111827;
+}
 
+/* Base styles */
+html {
+  font-size: 16px;
+}
 
+body {
+  margin: 0;
+  /* font-family: 'Inter', sans-serif; */
+  background-color: #f3f4f6;
+  color: #111827;
+}
 
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* a { VER SI ES NECESARIO (COHORT-TOOLS)
+    list-style: none;
+    color: black;
+  } */
