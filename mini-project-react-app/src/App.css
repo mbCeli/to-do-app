@@ -56,22 +56,36 @@ aside a {
   height: 85vh;
   border: 2px solid red;
   margin: 5em 0 0 10em;
-}
-
-.home-page {
-  /* width: 87%; */
-  /* height: 85vh;
-  border: 2px solid red;
-  margin: 5em 0 0 10em; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* position: absolute;
-  top: 5em;
-  left: 12%;
-  z-index: 6; */
 }
 
+/* .home-page {
+  width: 87%;
+  height: 85vh;
+  border: 2px solid red;
+  margin: 5em 0 0 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5em;
+  left: 12%;
+  z-index: 6;
+} */
+
+/* .to-do-details {
+  width: 87%;
+  height: 85vh;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5em;
+  left: 12%;
+} */
  
 .to-do-list {
   display: flex;
@@ -90,18 +104,6 @@ aside a {
   border: 1px solid #0b1a4d;
   width: 22em;
   height: 3em;
-}
-
-.to-do-details {
-  /* width: 87%;
-  height: 85vh;
-  border: 2px solid red; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* position: absolute;
-  top: 5em;
-  left: 12%; */
 }
 
 .footer {

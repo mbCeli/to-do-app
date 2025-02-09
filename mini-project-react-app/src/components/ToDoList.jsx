@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ToDoTasks from "../assets/to-dos.json";
 import ToDoListCard from "./ToDoListCard";
-import { Link } from "react-router-dom";
 
 export default function ToDoList() {
   const [toDos, setToDo] = useState(ToDoTasks);
