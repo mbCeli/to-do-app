@@ -1,0 +1,51 @@
+[
+    {
+        "task": "Read the project brief",
+        "completed": true,
+        "description": "Understand the technical requirements of the project.",
+        "priority": "High",
+        "estimatedDuration": "~40min"
+    },
+    {
+        "task": "Create a project repository",
+        "completed": false,
+        "description": "One team member should create a new GitHub repository for the project on their GitHub account and add other team members as collaborators.",
+        "priority": "High",
+        "estimatedDuration": "~5min"
+    },
+    {
+        "task": "Create React application using Vite",
+        "completed": false,
+        "description": "Create a new React application locally in the folder of the cloned repository.",
+        "priority": "High",
+        "estimatedDuration": "~2min"
+    },
+    {
+        "task": "Finish Day 1 Development Tasks",
+        "completed": false,
+        "description": "Create a Home Page in your React app that has navbar, sidebar and footer components.",
+        "priority": "High",
+        "estimatedDuration": "~3h"
+    },
+    {
+        "task": "Finish Day 1 Research Tasks",
+        "completed": false,
+        "description": "Read technical materials and review the content for the following day.",
+        "priority": "Low",
+        "estimatedDuration": "~45min"
+    },
+    {
+        "task": "Finish Day 2 Development Tasks",
+        "completed": false,
+        "description": "Render your JSON data as a list.",
+        "priority": "Medium",
+        "estimatedDuration": "~4h"
+    },
+    {
+        "task": "Finish Day 2 Research Tasks",
+        "completed": false,
+        "description": "Read technical materials and review the content for the following day.",
+        "priority": "High",
+        "estimatedDuration": "~25min"
+    }
+]
