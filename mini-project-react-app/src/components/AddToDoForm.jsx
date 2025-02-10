@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddToDoForm(/* { addStudent } */) {
+export default function AddToDoForm({ addTask }) {
     const [task, setTask] = useState("");
     const [description, setDescription] = useState("");
     const [estimatedDuration, setEstimatedDuration] = useState("");
@@ -11,7 +11,7 @@ export default function AddToDoForm(/* { addStudent } */) {
         e.preventDefault();
         const newTask = { task, description, estimatedDuration, priority, completed };
     
-        /* {addStudent((newStudent))} */
+        {addTask((newTask))}
     
         setTask("");
         setDescription("");
@@ -53,7 +53,7 @@ export default function AddToDoForm(/* { addStudent } */) {
 
                 <label>
                     Completed
-                    <input name="completed" type="checkbox" checked={completed} onChange={(e) => setCompleted(e.target.value)} />
+                    <input name="completed" type="checkbox" checked={completed} onChange={(e) => setCompleted(e.target.checked)} />
                 </label>
 
                 <button type="submit">Add Task</button>
