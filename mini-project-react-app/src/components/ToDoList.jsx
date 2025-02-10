@@ -2,8 +2,8 @@
 import ToDoTasks from "../assets/to-dos.json"; */
 import ToDoListCard from "./ToDoListCard";
 
-export default function ToDoList({ toDos, deleteTask }) {
-  /* const [toDos, setToDo] = useState(ToDoTasks); */ //Me llevo este state a HomaPage para poder usarlo en el addNewTask
+export default function ToDoList({ toDos, deleteTask, finishTask }) {
+  /* const [toDos, setToDo] = useState(ToDoTasks); */ //Me llevo este state a HomePage para poder usarlo en el addNewTask
 
   /* const deleteTask = (i) => {                    //También me llevo esta función a HomePage
     const filteredToDos = toDos.filter((toDo) => {
@@ -23,6 +23,7 @@ export default function ToDoList({ toDos, deleteTask }) {
               además cambié este index por el índice que ya tiene en cuenta el map */
               toDo={toDo}
               deleteTask={deleteTask}
+              finishTask={finishTask}
             />
         );
       })}

@@ -15,6 +15,19 @@ export default function HomePage() {
     setToDo(filteredToDos);
   };
 
+  const finishTask = (indexToFinish) => {
+    const updatedList = [...toDos].map((task, index) => {
+      if(index === indexToFinish) {
+        
+        /* console.log(task.completed); */
+        return {...task, completed: !task.completed};
+      } else {
+        return task;
+      }
+    })
+    setToDo(updatedList)
+  }
+
   const addNewTask = (newTask) => {
     setToDo([...toDos, newTask]);
   };
@@ -25,7 +38,7 @@ export default function HomePage() {
       <AddToDoForm addTask={addNewTask}/>
       <br />
 
-      <ToDoList toDos={toDos} deleteTask={deleteTask}/>
+      <ToDoList toDos={toDos} deleteTask={deleteTask} finishTask={finishTask}/>
 
     </div>
   );

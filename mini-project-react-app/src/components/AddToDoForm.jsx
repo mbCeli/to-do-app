@@ -5,11 +5,10 @@ export default function AddToDoForm({ addTask }) {
     const [description, setDescription] = useState("");
     const [estimatedDuration, setEstimatedDuration] = useState("");
     const [priority, setPriority] = useState("");
-    const [completed, setCompleted] = useState(false);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        const newTask = { task, description, estimatedDuration, priority, completed };
+        const newTask = { task, description, estimatedDuration, priority };
     
         {addTask((newTask))}
     
@@ -17,7 +16,6 @@ export default function AddToDoForm({ addTask }) {
         setDescription("");
         setEstimatedDuration("");
         setPriority("");
-        setCompleted(false);
     }
 
     return (
@@ -49,11 +47,6 @@ export default function AddToDoForm({ addTask }) {
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
-                </label>
-
-                <label>
-                    Completed
-                    <input name="completed" type="checkbox" checked={completed} onChange={(e) => setCompleted(e.target.checked)} />
                 </label>
 
                 <button type="submit">Add Task</button>
