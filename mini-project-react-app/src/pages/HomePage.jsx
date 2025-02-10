@@ -18,7 +18,6 @@ export default function HomePage() {
   const finishTask = (indexToFinish) => {
     const updatedList = [...toDos].map((task, index) => {
       if(index === indexToFinish) {
-        
         /* console.log(task.completed); */
         return {...task, completed: !task.completed};
       } else {

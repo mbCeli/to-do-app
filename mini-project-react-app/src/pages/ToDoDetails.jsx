@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 
-import ToDoTasks from "../assets/to-dos.json";
+import ToDoTasks from "../assets/to-dos-descrip.json";
 
 export default function ToDoDetails() {
   const { taskIndex } = useParams();
@@ -15,7 +15,8 @@ export default function ToDoDetails() {
         {taskDetails && (
           <>
             <p className="task-name">{taskDetails.task}</p>
-            <p className="completion">{taskDetails.completed}</p>
+            <p className="description">{taskDetails.description}</p>
+            <p>{taskDetails.priority}</p>
             {/* Poner un input para que se pueda escribir mas detalles sobre el task */}
 
             <Link to="/">

@@ -107,6 +107,10 @@ aside a {
   height: 3em;
 }
 
+.completed-check {
+  cursor: pointer;
+}
+
 .team-members {
   display: flex;
   justify-content: space-evenly;

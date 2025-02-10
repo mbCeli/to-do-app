@@ -3,19 +3,19 @@ import { useState } from "react";
 export default function AddToDoForm({ addTask }) {
     const [task, setTask] = useState("");
     const [description, setDescription] = useState("");
-    const [estimatedDuration, setEstimatedDuration] = useState("");
     const [priority, setPriority] = useState("");
+    /* const [estimatedDuration, setEstimatedDuration] = useState(""); */
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        const newTask = { task, description, estimatedDuration, priority };
+        const newTask = { task, description, priority /* estimatedDuration */};
     
         {addTask((newTask))}
     
         setTask("");
         setDescription("");
-        setEstimatedDuration("");
         setPriority("");
+        /* setEstimatedDuration(""); */
     }
 
     return (
@@ -32,10 +32,10 @@ export default function AddToDoForm({ addTask }) {
                     <textarea name="description" rows="5" cols="40" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Comment text."></textarea>
                 </label>
 
-                <label>
+                {/* <label>
                     Estimated Duration
                     <input name="duration" type="text" value={estimatedDuration} onChange={(e) => setEstimatedDuration(e.target.value)} placeholder="Task Estimated Duration" />
-                </label>
+                </label> */}
             </div>
 
             <div>
