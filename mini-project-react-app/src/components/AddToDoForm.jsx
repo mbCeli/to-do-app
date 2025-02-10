@@ -1,34 +1,23 @@
 import { useState } from "react";
 
 export default function AddToDoForm(/* { addStudent } */) {
-    const [fullName, setFullName] = useState("");
-    const [image, setImage] = useState("");
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
-    const [program, setProgram] = useState("");
-    const [graduationYear, setGraduationYear] = useState(2023);
-    const [graduated, setGraduated] = useState(false);
-
-    const handleNameInput = e => setFullName(e.target.value);
-    const handleImageInput = e => setImage(e.target.value);
-    const handlePhoneInput = e => setPhone(e.target.value);
-    const handleProgramSelect = e => setProgram(e.target.value);
-
-    const handleGraduatedInput = e => setGraduated(e.target.checked);
+    const [task, setTask] = useState("");
+    const [description, setDescription] = useState("");
+    const [estimatedDuration, setEstimatedDuration] = useState("");
+    const [priority, setPriority] = useState("");
+    const [completed, setCompleted] = useState(false);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        const newStudent = { fullName, email, phone, program, image, graduationYear, graduated };
+        const newTask = { task, description, estimatedDuration, priority, completed };
     
         /* {addStudent((newStudent))} */
     
-        setFullName("");
-        setImage("");
-        setPhone("");
-        setEmail("");
-        setProgram("");
-        setGraduationYear(2023);
-        setGraduated(false);
+        setTask("");
+        setDescription("");
+        setEstimatedDuration("");
+        setPriority("");
+        setCompleted(false);
     }
 
     return (
@@ -37,24 +26,24 @@ export default function AddToDoForm(/* { addStudent } */) {
             <div>
                 <label>
                     Task
-                    <input name="task" type="text" value={fullName} onChange={handleNameInput} placeholder="Task Title" />
+                    <input name="task" type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="Task Title" />
                 </label>
 
                 <label>
                     Description (optional)
-                    <textarea name="description" rows="5" cols="40" value={image} onChange={handleImageInput} placeholder="Comment text."></textarea>
+                    <textarea name="description" rows="5" cols="40" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Comment text."></textarea>
                 </label>
 
                 <label>
                     Estimated Duration
-                    <input name="duration" type="text" value={phone} onChange={handlePhoneInput} placeholder="Task Estimated Duration" />
+                    <input name="duration" type="text" value={estimatedDuration} onChange={(e) => setEstimatedDuration(e.target.value)} placeholder="Task Estimated Duration" />
                 </label>
             </div>
 
             <div>
                 <label>
                     Priority
-                    <select name="priority" value={program} onChange={handleProgramSelect}>
+                    <select name="priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
                         <option value="">-- None --</option>
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
@@ -64,7 +53,7 @@ export default function AddToDoForm(/* { addStudent } */) {
 
                 <label>
                     Completed
-                    <input name="completed" type="checkbox" checked={graduated} onChange={handleGraduatedInput} />
+                    <input name="completed" type="checkbox" checked={completed} onChange={(e) => setCompleted(e.target.value)} />
                 </label>
 
                 <button type="submit">Add Task</button>
