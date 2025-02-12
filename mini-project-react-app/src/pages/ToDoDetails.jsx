@@ -1,13 +1,23 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ToDoTasks from "../assets/to-dos-descrip.json";
 
 export default function ToDoDetails() {
   const { taskIndex } = useParams();
 
-  const index = Number(taskIndex); //Los parámetros de la URL como {taskIndex} se pasan como strings, así que necesitamos convertirlo a un número antes de hacer comparaciones
-  const taskDetails = ToDoTasks.find((task, i) => i === index);
+  const indexOneTask = Number(taskIndex); //Los parámetros de la URL como {taskIndex} se pasan como strings, así que necesitamos convertirlo a un número antes de hacer comparaciones
+  /* const taskDetails = ToDoTasks.find((task, i) => i === indexOneTask); */
+
+  //state de la lista de tasks para poder utilizarla en la función de update
+  const [toDos, setToDos] = useState(ToDoTasks);
+
+  useEffect(() => {
+    // Guarda los cambios en algún lugar persistente, si estás utilizando localStorage:
+    localStorage.setItem("toDos", JSON.stringify(toDos));
+  }, [toDos]);
+
+  const taskDetails = toDos[indexOneTask];
 
   //Para cambiar entre mostrar/esconder el formulario de update
 
@@ -19,14 +29,82 @@ export default function ToDoDetails() {
   const [description, setDescription] = useState(taskDetails.description);
   const [priority, setPriority] = useState(taskDetails.priority);
 
-  const handleUpdateForm = (e) => {
+  //
+  /* const updateTask = (updatedTaskIndex) => {
+    setToDos(toDos.map((task, index) => {
+      index === updatedTaskIndex ? 
+    }))
+  } */
+
+
+ /*  const handleUpdateForm = (e) => {
     e.preventDefault();
 
-    const updatedTask = { 
-      task,  
-      description, 
-      priority };
+    const updatedTask = {
+      task,
+      description,
+      priority
+    };
+
+    setToDos(toDos.map((task, index) => {
+      index === updatedTaskIndex ? updatedTask : task
+    }))
+  } */
+
+
+
+const handleUpdateForm = (e) => {
+  e.preventDefault();
+
+  const updatedTask = {
+    task,
+    description,
+    priority
+  };
+
+  const updatedList = [...toDos].map((task, index) => {
+    if (index === indexOneTask) {
+      return updatedTask;
+    } else {
+      return task;
+    }
+  })
+  console.log(updatedTask);
+  
+
+  setToDos(updatedList);
+  setShowForm(false); // Hide the form after saving changes
 }
+
+  
+/* const handleUpdateForm = (e) => {
+  e.preventDefault();
+
+  const updatedTask = {
+    task,
+    description,
+    priority
+  };
+
+  setToDos((prevToDos) => {
+    return prevToDos.map((t, i) => {
+      if (i === index) {
+        return {
+          ...t,
+          task: updatedTask.task,
+          description: updatedTask.description,
+          priority: updatedTask.priority
+        };
+      } else {
+        return t;
+      }
+    });
+  });
+
+  setShowForm(false); // Hide the form after saving changes
+}; */
+
+
 
   return (
     <div className="to-do-details">
@@ -52,7 +130,7 @@ export default function ToDoDetails() {
             {/* aquí empezaría el elemento de formulario de update, que tendrá una variable state que hace que se muestre o no cuando hacemos click en el botón update */}
             {showForm && (
               <div>
-                <form /* onSubmit={handleUpdateForm} */>
+                <form onSubmit={handleUpdateForm}>
                   <span>Update this Task</span>
                   <div>
                     <label>
