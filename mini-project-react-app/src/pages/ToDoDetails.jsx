@@ -9,6 +9,11 @@ export default function ToDoDetails() {
   const index = Number(taskIndex); //Los parámetros de la URL como {taskIndex} se pasan como strings, así que necesitamos convertirlo a un número antes de hacer comparaciones
   const taskDetails = ToDoTasks.find((task, i) => i === index);
 
+
+  //Para cambiar entre mostrar/esconder el formulario de update
+
+  const [showForm, setShowForm] = useState(false);
+
   //States para el formulario de actualizar:
   const [task, setTask] = useState(taskDetails.task);
   const [description, setDescription] = useState(taskDetails.description);
@@ -25,12 +30,12 @@ export default function ToDoDetails() {
             <p>{taskDetails.priority}</p>
             {/* Poner un input para que se pueda escribir mas detalles sobre el task */}
 
-            <button>Update</button><br />
+            <button onClick={() => setShowForm(!showForm)}>Update</button><br />
 
-            {/* aquí empezaría el elemento de formulario de update, que tendrá un atributo hidden hasta que hagamos click en el botón update */}
+            {/* aquí empezaría el elemento de formulario de update, que tendrá una variable state que hace que se muestre o no cuando hacemos click en el botón update */}
 
-            {/* <div>
-              <form onSubmit={handleFormSubmit} hidden>
+            {showForm && <div>
+              <form /* onSubmit={handleFormSubmit} */ >
                 <span>Add a New Task</span>
                 <div>
                   <label>
@@ -60,7 +65,7 @@ export default function ToDoDetails() {
                 </div>
 
               </form>
-            </div> */}
+            </div>}
 
             <Link to="/">
               <button>Back</button>
