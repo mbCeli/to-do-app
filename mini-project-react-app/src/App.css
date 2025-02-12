@@ -216,3 +216,12 @@ button[type="submit"]:hover {
 }
 
 /* End of Forms */
+
+/* App.css */
+.show-button {
+  display: block;
+}
+
+.hide-button {
+  display: none;
+}
