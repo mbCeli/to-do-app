@@ -4,7 +4,7 @@
   line-height: 1.5;
   --primary-color: #1e40af;
   --secondary-color: #3b82f6;
-  --background-color: #f3f4f6;
+  --background-color: #fafafa;
   --text-color: #111827;
 }
 
@@ -18,6 +18,11 @@ body {
   /* font-family: 'Inter', sans-serif; */
   background-color: #f3f4f6;
   color: #111827;
+}
+
+hr {
+  width: 60%;
+  margin-left: 0;
 }
 
 h1 {

@@ -17,7 +17,7 @@ export default function AddToDoForm({ addTask }) {
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} className="add-form">
             <span>Add a New Task</span>
             <div>
                 <label>

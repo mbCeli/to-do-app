@@ -5,6 +5,7 @@ export default function Sidebar() {
     <aside>
         <ul>
             <Link to="/">Home</Link>
+            <hr />
             <Link to="/about">About</Link>
         </ul>
     </aside>

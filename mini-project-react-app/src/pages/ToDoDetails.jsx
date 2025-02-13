@@ -28,13 +28,14 @@ export default function ToDoDetails() {
   return (
     <div className="to-do-details">
       <h1>Task Details</h1>
-      <div>
+      <div className="task-details">
         {taskDetails && (
           <>
             <p className="task-name"><span>Task: </span>{taskDetails.task}</p>
             <p className="description"><span>Description: </span>{taskDetails.description}</p>
             <p><span>Priority Level: </span>{taskDetails.priority}</p>
             {/* click on update button to show form and hide button when showing the form */}
+            
             <button
               className={showButton ? "show-button" : "hide-button"}
               onClick={() => {
