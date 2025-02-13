@@ -16,7 +16,7 @@ function App() {
   return (
     <main className="app-container">
       <Navbar />
-      <Sidebar /> {/* ✔ ❌ */}
+      <Sidebar />
       <Footer />
       <div className="pages-container">
       <Routes>

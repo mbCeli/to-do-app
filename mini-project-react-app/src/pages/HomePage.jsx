@@ -3,19 +3,20 @@ import { useEffect, useState } from "react";
 import AddToDoForm from "../components/AddToDoForm";
 import ToDoList from "../components/ToDoList";
 
-import ToDoTasks from "../assets/to-dos-descrip.json"; //he importado el json nuevo aquí por el momento
+import ToDoTasks from "../assets/to-dos-descrip.json"; //he importado el json nuevo con las descripciones
 
 export default function HomePage() {
-  const [toDos, setToDo] = useState([]);
+  const [toDos, setToDos] = useState([]);
 
+  //uso de localStorage para conseguir que cuando volvemos al home page, se muestren los cambios que hemos hecho en el update form
   useEffect(() => {
     const storedToDos = localStorage.getItem("toDos");
     if (storedToDos) {
-      setToDo(JSON.parse(storedToDos));
+      setToDos(JSON.parse(storedToDos));
     } else {
       // Si no hay nada en localStorage, cargamos de un archivo JSON u otro lugar.
-      // Usa la forma en que estás obteniendo inicialmente las tareas.
-      setToDo(ToDoTasks);  // P. ej., datos iniciales del JSON.
+      // Usamos los datos iniciales del JSON
+      setToDos(ToDoTasks);  
     }
   }, []);
 
@@ -23,7 +24,7 @@ export default function HomePage() {
     const filteredToDos = toDos.filter((toDo) => {
       return toDos.indexOf(toDo) !== i;
     });
-    setToDo(filteredToDos);
+    setToDos(filteredToDos);
   };
 
   const finishTask = (indexToFinish) => {
@@ -35,11 +36,11 @@ export default function HomePage() {
         return task;
       }
     })
-    setToDo(finishedList)
+    setToDos(finishedList)
   }
 
   const addNewTask = (newTask) => {
-    setToDo([...toDos, newTask]);
+    setToDos([...toDos, newTask]);
   };
 
   return (
@@ -47,9 +48,7 @@ export default function HomePage() {
       <h1>Home Page</h1>
       <AddToDoForm addTask={addNewTask}/>
       <br />
-
       <ToDoList toDos={toDos} deleteTask={deleteTask} finishTask={finishTask}/>
-
     </div>
   );
 }

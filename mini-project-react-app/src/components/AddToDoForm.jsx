@@ -4,18 +4,16 @@ export default function AddToDoForm({ addTask }) {
     const [task, setTask] = useState("");
     const [description, setDescription] = useState("");
     const [priority, setPriority] = useState("");
-    /* const [estimatedDuration, setEstimatedDuration] = useState(""); */
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        const newTask = { task, description, priority /* estimatedDuration */};
+        const newTask = { task, description, priority};
     
         {addTask((newTask))}
     
         setTask("");
         setDescription("");
         setPriority("");
-        /* setEstimatedDuration(""); */
     }
 
     return (
@@ -31,18 +29,13 @@ export default function AddToDoForm({ addTask }) {
                     Description (optional)
                     <textarea name="description" rows="5" cols="40" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Comment text."></textarea>
                 </label>
-
-                {/* <label>
-                    Estimated Duration
-                    <input name="duration" type="text" value={estimatedDuration} onChange={(e) => setEstimatedDuration(e.target.value)} placeholder="Task Estimated Duration" />
-                </label> */}
             </div>
 
             <div>
                 <label>
                     Priority
                     <select name="priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
-                        <option value="">-- None --</option>
+                        <option disabled value="">-- None --</option>
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
