@@ -62,7 +62,7 @@ export default function UpdateToDoForm({ toDos, setToDos, indexOneTask, taskDeta
                             value={priority}
                             onChange={(e) => setPriority(e.target.value)}
                         >
-                            <option value="">-- None --</option>
+                            <option disabled value="">-- None --</option>
                             <option value="Low">Low</option>
                             <option value="Medium">Medium</option>
                             <option value="High">High</option>
