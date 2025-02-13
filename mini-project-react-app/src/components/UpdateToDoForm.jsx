@@ -69,7 +69,7 @@ export default function UpdateToDoForm({ toDos, setToDos, indexOneTask, taskDeta
                         </select>
                     </label>
 
-                    <button type="submit">Save</button>
+                    <button type="submit" className="btn save">Save</button>
                 </div>
             </form>
         </div>

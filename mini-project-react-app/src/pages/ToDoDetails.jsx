@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import ToDoTasks from "../assets/to-dos-descrip.json";
 import UpdateToDoForm from "../components/UpdateToDoForm";
 
+import { FaEdit } from "react-icons/fa";
+
 export default function ToDoDetails() {
   const { taskIndex } = useParams();
 
@@ -31,23 +33,23 @@ export default function ToDoDetails() {
       <div className="task-details">
         {taskDetails && (
           <>
-            <p className="task-name"><span>Task: </span>{taskDetails.task}</p>
-            <p className="description"><span>Description: </span>{taskDetails.description}</p>
-            <p><span>Priority Level: </span>{taskDetails.priority}</p>
+            <p><span className="task-details-info">Task: </span>{taskDetails.task}</p>
+            <p><span className="task-details-info">Description: </span>{taskDetails.description}</p>
+            <p><span className="task-details-info">Priority Level: </span>{taskDetails.priority}</p>
             {/* click on update button to show form and hide button when showing the form */}
             
             <button
-              className={showButton ? "show-button" : "hide-button"}
+              className={showButton ? "btn show-button" : "btn hide-button"}
               onClick={() => {
                 setShowForm(!showForm);
                 setShowButton(!showButton);
               }}>
-              Update
+              Edit <FaEdit className="edit-icon"/>
             </button>
             <br />
             {showForm && <UpdateToDoForm toDos={toDos} setToDos={setToDos} indexOneTask={indexOneTask} taskDetails={taskDetails} setShowForm={setShowForm} setShowButton={setShowButton} />}
             <Link to="/">
-              <button>Back</button>
+              <button className="btn back">Back</button>
             </Link>
           </>
         )}

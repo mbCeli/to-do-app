@@ -42,7 +42,7 @@ export default function AddToDoForm({ addTask }) {
                     </select>
                 </label>
 
-                <button type="submit">Add Task</button>
+                <button type="submit" className="btn add">Add Task</button>
             </div>
 
         </form>
