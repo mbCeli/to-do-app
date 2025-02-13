@@ -10,8 +10,11 @@ import ToDoDetails from "./pages/ToDoDetails";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
+import ToDoTasks from "./assets/to-dos-descrip.json"
+import { useState } from "react";
 
 function App() {
+const [toDos, setToDos] = useState(ToDoTasks);
 
   return (
     <main className="app-container">
@@ -20,8 +23,8 @@ function App() {
       <Footer />
       <div className="pages-container">
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/tasks/:taskIndex" element={<ToDoDetails />} />
+        <Route path="/" element={<HomePage toDos={toDos} setToDos={setToDos}/>} />
+        <Route path="/tasks/:taskIndex" element={<ToDoDetails toDos={toDos} setToDos={setToDos}/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

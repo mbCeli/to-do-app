@@ -1,24 +1,15 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import ToDoTasks from "../assets/to-dos-descrip.json";
 import UpdateToDoForm from "../components/UpdateToDoForm";
 
 import { FaEdit } from "react-icons/fa";
 
-export default function ToDoDetails() {
+export default function ToDoDetails({toDos, setToDos}) {
   const { taskIndex } = useParams();
 
   const indexOneTask = Number(taskIndex); //Los parámetros de la URL como {taskIndex} se pasan como strings, así que necesitamos convertirlo a un número antes de hacer comparaciones
-
-  //state de la lista de tasks para poder utilizarla en la función de update
-  const [toDos, setToDos] = useState(ToDoTasks);
-
-  useEffect(() => {
-    // Guarda los cambios en localStorage:
-    localStorage.setItem("toDos", JSON.stringify(toDos));
-  }, [toDos]);
-
+ 
   const taskDetails = toDos[indexOneTask];
 
   //Para cambiar entre mostrar/esconder el formulario de update y el botón de update:

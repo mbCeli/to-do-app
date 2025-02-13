@@ -1,25 +1,8 @@
-import { useEffect, useState } from "react";
-
 import AddToDoForm from "../components/AddToDoForm";
 import ToDoList from "../components/ToDoList";
 
-import ToDoTasks from "../assets/to-dos-descrip.json"; //he importado el json nuevo con las descripciones
 
-export default function HomePage() {
-  const [toDos, setToDos] = useState([]);
-
-  //uso de localStorage para conseguir que cuando volvemos al home page, se muestren los cambios que hemos hecho en el update form
-  useEffect(() => {
-    const storedToDos = localStorage.getItem("toDos");
-    if (storedToDos) {
-      setToDos(JSON.parse(storedToDos));
-    } else {
-      // Si no hay nada en localStorage, cargamos de un archivo JSON u otro lugar.
-      // Usamos los datos iniciales del JSON
-      setToDos(ToDoTasks);  
-    }
-  }, []);
-
+export default function HomePage({toDos, setToDos}) {
   const deleteTask = (i) => {                   
     const filteredToDos = toDos.filter((toDo) => {
       return toDos.indexOf(toDo) !== i;
